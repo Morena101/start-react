@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import pokemon from "./pokemon.json";
 
 function App() {
   return (
@@ -19,11 +20,12 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {/* Table rows will go here */}
-          <tr>
-            <td>Morena</td>
-            <td>Human</td>
+          {pokemon.slice(0, 20).map((pokemon) => (
+          <tr key={pokemon.id}>
+            <td>{pokemon.name.english}</td>
+            <td>{pokemon.type.join(", ")}</td>
           </tr>
+          ))}
         </tbody>
       </table>
     </div>
